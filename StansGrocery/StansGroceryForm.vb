@@ -2,7 +2,7 @@
 'RCET 0265
 'Fall 2021
 'Stan's Grocery
-'
+'https://github.com/heinelli/StansGrocery.git
 
 Option Strict On
 Option Explicit On
@@ -46,7 +46,8 @@ Public Class StansGroceryForm
         Dim item As String = food(index, 0)
         Dim aisle As String = food(index, 1)
         Dim section As String = food(index, 2)
-        DisplayLabel.Text = $"You will find {item} in aisle {aisle} in the {section} section"
+        Dim quantity As String = food(index, 3)
+        DisplayLabel.Text = $"You will find {item} in aisle {aisle} in the {section} section. {quantity} left in stock."
 
 
     End Sub
