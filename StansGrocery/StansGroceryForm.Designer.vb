@@ -47,7 +47,7 @@ Partial Class StansGroceryForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1522, 42)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1522, 40)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -103,7 +103,7 @@ Partial Class StansGroceryForm
         '
         'SearchButton
         '
-        Me.SearchButton.Location = New System.Drawing.Point(396, 124)
+        Me.SearchButton.Location = New System.Drawing.Point(503, 71)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(166, 58)
         Me.SearchButton.TabIndex = 3
@@ -136,7 +136,7 @@ Partial Class StansGroceryForm
         '
         Me.FilterGroupBox.Controls.Add(Me.FilterByCategoryRadioButton)
         Me.FilterGroupBox.Controls.Add(Me.FilterByAisleRadioButton)
-        Me.FilterGroupBox.Location = New System.Drawing.Point(50, 250)
+        Me.FilterGroupBox.Location = New System.Drawing.Point(30, 199)
         Me.FilterGroupBox.Name = "FilterGroupBox"
         Me.FilterGroupBox.Size = New System.Drawing.Size(222, 157)
         Me.FilterGroupBox.TabIndex = 6
@@ -146,16 +146,16 @@ Partial Class StansGroceryForm
         'FilterComboBox
         '
         Me.FilterComboBox.FormattingEnabled = True
-        Me.FilterComboBox.Location = New System.Drawing.Point(35, 591)
+        Me.FilterComboBox.Location = New System.Drawing.Point(329, 199)
         Me.FilterComboBox.Name = "FilterComboBox"
         Me.FilterComboBox.Size = New System.Drawing.Size(355, 33)
         Me.FilterComboBox.TabIndex = 7
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(320, 85)
+        Me.SearchTextBox.Location = New System.Drawing.Point(12, 85)
         Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(303, 31)
+        Me.SearchTextBox.Size = New System.Drawing.Size(447, 31)
         Me.SearchTextBox.TabIndex = 8
         '
         'StansGroceryForm

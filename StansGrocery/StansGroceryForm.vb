@@ -30,7 +30,8 @@ Public Class StansGroceryForm
 
     End Sub
 
-    Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+    Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click,
+                                                                             SearchToolStripMenuItem.Click
         DisplayLabel.Text = food(2, 2)
     End Sub
 
