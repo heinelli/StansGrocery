@@ -46,7 +46,7 @@ Partial Class StansGroceryForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(946, 40)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1522, 40)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -85,7 +85,7 @@ Partial Class StansGroceryForm
         'DisplayLabel
         '
         Me.DisplayLabel.AutoSize = True
-        Me.DisplayLabel.Location = New System.Drawing.Point(316, 339)
+        Me.DisplayLabel.Location = New System.Drawing.Point(391, 738)
         Me.DisplayLabel.Name = "DisplayLabel"
         Me.DisplayLabel.Size = New System.Drawing.Size(77, 25)
         Me.DisplayLabel.TabIndex = 1
@@ -95,14 +95,14 @@ Partial Class StansGroceryForm
         '
         Me.DisplayListBox.FormattingEnabled = True
         Me.DisplayListBox.ItemHeight = 25
-        Me.DisplayListBox.Location = New System.Drawing.Point(420, 210)
+        Me.DisplayListBox.Location = New System.Drawing.Point(420, 85)
         Me.DisplayListBox.Name = "DisplayListBox"
-        Me.DisplayListBox.Size = New System.Drawing.Size(267, 154)
+        Me.DisplayListBox.Size = New System.Drawing.Size(1043, 379)
         Me.DisplayListBox.TabIndex = 2
         '
         'SearchButton
         '
-        Me.SearchButton.Location = New System.Drawing.Point(486, 71)
+        Me.SearchButton.Location = New System.Drawing.Point(166, 43)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(201, 91)
         Me.SearchButton.TabIndex = 3
@@ -145,7 +145,7 @@ Partial Class StansGroceryForm
         'FilterComboBox
         '
         Me.FilterComboBox.FormattingEnabled = True
-        Me.FilterComboBox.Location = New System.Drawing.Point(406, 428)
+        Me.FilterComboBox.Location = New System.Drawing.Point(420, 506)
         Me.FilterComboBox.Name = "FilterComboBox"
         Me.FilterComboBox.Size = New System.Drawing.Size(417, 33)
         Me.FilterComboBox.TabIndex = 7
@@ -154,7 +154,7 @@ Partial Class StansGroceryForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(946, 591)
+        Me.ClientSize = New System.Drawing.Size(1522, 1006)
         Me.Controls.Add(Me.FilterComboBox)
         Me.Controls.Add(Me.FilterGroupBox)
         Me.Controls.Add(Me.SearchButton)
