@@ -22,8 +22,23 @@ Public Class StansGroceryForm
                 If i < 153 Then
                     food(i, 0) = Mid(formattedRecord(0).Replace("""", ""), 6)
                     DisplayListBox.Items.Add(food(i, 0))
+
+                    food(i, 1) = Mid(formattedRecord(1).Replace("""", ""), 6)
+                    If food(i, 1) = "" Then
+                        food(i, 1) = "8"
+                    ElseIf food(i, 1) = "0" Then
+                        food(i, 1) = "1"
+                    End If
+
+                    food(i, 2) = Mid(formattedRecord(2).Replace("""", ""), 6)
+                    If food(i, 2) = "" Then
+                        food(i, 2) = "Various groceries"
+                    End If
+
                 ElseIf i > 153 Then
                     food(i - 1, 0) = Mid(formattedRecord(0).Replace("""", ""), 6)
+                    food(i - 1, 1) = Mid(formattedRecord(1).Replace("""", ""), 6)
+                    food(i - 1, 2) = Mid(formattedRecord(2).Replace("""", ""), 6)
                     DisplayListBox.Items.Add(food(i - 1, 0))
                 End If
             End If
@@ -32,17 +47,9 @@ Public Class StansGroceryForm
 
 
 
-            food(i, 1) = Mid(formattedRecord(1).Replace("""", ""), 6)
-            If food(i, 1) = "" Then
-                food(i, 1) = "8"
-            ElseIf food(i, 1) = "0" Then
-                food(i, 1) = "1"
-            End If
 
-            food(i, 2) = Mid(formattedRecord(2).Replace("""", ""), 6)
-            If food(i, 2) = "" Then
-                food(i, 2) = "Various groceries"
-            End If
+
+
 
 
         Next
