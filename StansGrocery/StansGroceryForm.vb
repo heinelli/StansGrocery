@@ -7,7 +7,7 @@
 Option Strict On
 Option Explicit On
 Public Class StansGroceryForm
-    Dim food(255, 3) As String
+    Dim food(255, 4) As String
 
     Private Sub StansGroceryForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim record As String
@@ -17,7 +17,21 @@ Public Class StansGroceryForm
         For i = 0 To 255
             record = LineInput(1)
             formattedRecord = Split(record, ",")
-            food(i, 0) = Mid(formattedRecord(0).Replace("""", ""), 6)
+
+            If Mid(formattedRecord(0).Replace("""", ""), 6) <> "" Then
+                If i < 153 Then
+                    food(i, 0) = Mid(formattedRecord(0).Replace("""", ""), 6)
+                    DisplayListBox.Items.Add(food(i, 0))
+                ElseIf i > 153 Then
+                    food(i - 1, 0) = Mid(formattedRecord(0).Replace("""", ""), 6)
+                    DisplayListBox.Items.Add(food(i - 1, 0))
+                End If
+            End If
+
+
+
+
+
             food(i, 1) = Mid(formattedRecord(1).Replace("""", ""), 6)
             If food(i, 1) = "" Then
                 food(i, 1) = "8"
@@ -29,7 +43,8 @@ Public Class StansGroceryForm
             If food(i, 2) = "" Then
                 food(i, 2) = "Various groceries"
             End If
-            DisplayListBox.Items.Add(food(i, 0))
+
+
         Next
 
         food(0,3) = "Baby stuff"
@@ -58,8 +73,9 @@ Public Class StansGroceryForm
         food(23, 3) = "Various groceries"
         food(24, 3) = "Unknown"
 
-
-
+        For i = 1 To 17
+            food(i, 4) = CStr(i)
+        Next
 
         ShowAllRadioButton.Checked = true
 
@@ -72,6 +88,7 @@ Public Class StansGroceryForm
 
     Private Sub FilterByCategoryRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByCategoryRadioButton.CheckedChanged
         FilterComboBox.Items.Clear()
+        FilterComboBox.Text = ""
         For i = 0 To 24
             FilterComboBox.Items.Add(food(i, 3))
         Next
@@ -83,7 +100,7 @@ Public Class StansGroceryForm
         Dim item As String = food(index, 0)
         Dim aisle As String = food(index, 1)
         Dim section As String = food(index, 2)
-        DisplayLabel.Text = $"You will find {item} in aisle {aisle} in the {section} section."
+        DisplayLabel.Text = $"You will find {item} in aisle {aisle} in the {section} section. {index}"
 
 
     End Sub
@@ -94,9 +111,35 @@ Public Class StansGroceryForm
 
     Private Sub ShowAllRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles ShowAllRadioButton.CheckedChanged
         FilterComboBox.Items.Clear()
-        For i = 0 To 255
+        FilterComboBox.Text = ""
+        For i = 0 To 254
             FilterComboBox.Items.Add(food(i, 0))
         Next
 
+    End Sub
+
+    Private Sub FilterByAisleRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByAisleRadioButton.CheckedChanged
+        FilterComboBox.Items.Clear()
+        FilterComboBox.Text = ""
+        For i = 1 To 17
+            FilterComboBox.Items.Add(food(i, 4))
+        Next
+    End Sub
+
+    Private Sub FilterComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FilterComboBox.SelectedIndexChanged
+        Dim filterIndex As String = CStr(FilterComboBox.SelectedItem)
+        Dim selectedFilter As Integer
+        If FilterByAisleRadioButton.Checked = True Then
+            selectedFilter = 1
+        ElseIf FilterByCategoryRadioButton.Checked = True Then
+            selectedFilter = 2
+        End If
+
+        DisplayListBox.Items.Clear()
+        For i = 0 To 254
+            If food(i, selectedFilter) = filterIndex Then
+                DisplayListBox.Items.Add(food(i, 0))
+            End If
+        Next
     End Sub
 End Class
