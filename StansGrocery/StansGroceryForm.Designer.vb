@@ -48,7 +48,7 @@ Partial Class StansGroceryForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1522, 40)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1563, 40)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -87,16 +87,17 @@ Partial Class StansGroceryForm
         'DisplayLabel
         '
         Me.DisplayLabel.AutoSize = True
-        Me.DisplayLabel.Location = New System.Drawing.Point(706, 500)
+        Me.DisplayLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DisplayLabel.Location = New System.Drawing.Point(498, 510)
         Me.DisplayLabel.Name = "DisplayLabel"
-        Me.DisplayLabel.Size = New System.Drawing.Size(0, 25)
+        Me.DisplayLabel.Size = New System.Drawing.Size(0, 29)
         Me.DisplayLabel.TabIndex = 1
         '
         'DisplayListBox
         '
         Me.DisplayListBox.FormattingEnabled = True
         Me.DisplayListBox.ItemHeight = 25
-        Me.DisplayListBox.Location = New System.Drawing.Point(711, 85)
+        Me.DisplayListBox.Location = New System.Drawing.Point(726, 36)
         Me.DisplayListBox.Name = "DisplayListBox"
         Me.DisplayListBox.Size = New System.Drawing.Size(752, 379)
         Me.DisplayListBox.TabIndex = 2
@@ -154,7 +155,7 @@ Partial Class StansGroceryForm
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(12, 85)
+        Me.SearchTextBox.Location = New System.Drawing.Point(30, 85)
         Me.SearchTextBox.Name = "SearchTextBox"
         Me.SearchTextBox.Size = New System.Drawing.Size(447, 31)
         Me.SearchTextBox.TabIndex = 8
@@ -174,7 +175,7 @@ Partial Class StansGroceryForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1522, 681)
+        Me.ClientSize = New System.Drawing.Size(1563, 598)
         Me.Controls.Add(Me.SearchTextBox)
         Me.Controls.Add(Me.FilterComboBox)
         Me.Controls.Add(Me.FilterGroupBox)
@@ -184,7 +185,7 @@ Partial Class StansGroceryForm
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "StansGroceryForm"
-        Me.Text = "Form1"
+        Me.Text = "Stan's Grocery"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.FilterGroupBox.ResumeLayout(False)

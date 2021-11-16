@@ -113,7 +113,7 @@ Public Class StansGroceryForm
 
         'Insert appropriate data into displaylabel according to selected item in listbox
         If item <> "" Then
-            DisplayLabel.Text = $"You will find {item} in aisle {aisle} in the {section} section. {iteration}"
+            DisplayLabel.Text = $"You will find {item} in aisle {aisle} in the {section} section."
         Else
             DisplayLabel.Text = ""
         End If
