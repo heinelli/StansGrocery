@@ -42,16 +42,6 @@ Public Class StansGroceryForm
                     DisplayListBox.Items.Add(food(i - 1, 0))
                 End If
             End If
-
-
-
-
-
-
-
-
-
-
         Next
 
         food(0,3) = "Baby stuff"
@@ -94,6 +84,7 @@ Public Class StansGroceryForm
     End Sub
 
     Private Sub FilterByCategoryRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByCategoryRadioButton.CheckedChanged
+        DisplayListBox.Items.Clear()
         FilterComboBox.Items.Clear()
         FilterComboBox.Text = ""
         For i = 0 To 24
@@ -103,11 +94,21 @@ Public Class StansGroceryForm
     End Sub
 
     Private Sub DisplayListBox_Click(sender As Object, e As EventArgs) Handles DisplayListBox.Click
-        Dim index As Integer = DisplayListBox.SelectedIndex
-        Dim item As String = food(index, 0)
-        Dim aisle As String = food(index, 1)
-        Dim section As String = food(index, 2)
-        DisplayLabel.Text = $"You will find {item} in aisle {aisle} in the {section} section. {index}"
+        Dim selectedItem As String = CStr(DisplayListBox.SelectedItem)
+        Dim iteration As Integer = 0
+        Dim item As String
+        Dim aisle As String
+        Dim section As String
+
+        Do Until food(iteration, 0) = selectedItem
+            iteration += 1
+        Loop
+
+        item = food(iteration, 0)
+        aisle = food(iteration, 1)
+        section = food(iteration, 2)
+
+        DisplayLabel.Text = $"You will find {item} in aisle {aisle} in the {section} section. {iteration}"
 
 
     End Sub
@@ -118,15 +119,18 @@ Public Class StansGroceryForm
 
     Private Sub ShowAllRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles ShowAllRadioButton.CheckedChanged
         FilterComboBox.Items.Clear()
+        DisplayListBox.Items.Clear()
         FilterComboBox.Text = ""
         For i = 0 To 254
             FilterComboBox.Items.Add(food(i, 0))
+            DisplayListBox.Items.Add(food(i, 0))
         Next
 
     End Sub
 
     Private Sub FilterByAisleRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByAisleRadioButton.CheckedChanged
         FilterComboBox.Items.Clear()
+        DisplayListBox.Items.Clear()
         FilterComboBox.Text = ""
         For i = 1 To 17
             FilterComboBox.Items.Add(food(i, 4))
