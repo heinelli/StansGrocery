@@ -89,10 +89,15 @@ Public Class StansGroceryForm
         DisplayListBox.Items.Clear()
 
         'Search the array for any text that matches searchbox text
+        'End program if zzz is typed in search textbox
         For i = 0 To 254
-            searchReturn = InStr(food(i, 0), textSearch)
-            If searchReturn <> 0 Then
-                DisplayListBox.Items.Add(food(i, 0))
+            If textSearch <> "zzz" Then
+                searchReturn = InStr(food(i, 0), textSearch)
+                If searchReturn <> 0 Then
+                    DisplayListBox.Items.Add(food(i, 0))
+                End If
+            Else
+                Me.Close()
             End If
         Next
     End Sub
