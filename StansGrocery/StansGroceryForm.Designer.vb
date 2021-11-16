@@ -106,6 +106,7 @@ Partial Class StansGroceryForm
         Me.DisplayListBox.Location = New System.Drawing.Point(726, 36)
         Me.DisplayListBox.Name = "DisplayListBox"
         Me.DisplayListBox.Size = New System.Drawing.Size(752, 379)
+        Me.DisplayListBox.Sorted = True
         Me.DisplayListBox.TabIndex = 4
         '
         'SearchButton
