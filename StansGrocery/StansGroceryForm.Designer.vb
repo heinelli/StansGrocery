@@ -56,7 +56,7 @@ Partial Class StansGroceryForm
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1563, 40)
         Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.MenuStrip1.Text = "MenuStrip"
         '
         'FileToolStripMenuItem
         '
@@ -144,7 +144,7 @@ Partial Class StansGroceryForm
         Me.FilterGroupBox.Controls.Add(Me.ShowAllRadioButton)
         Me.FilterGroupBox.Controls.Add(Me.FilterByCategoryRadioButton)
         Me.FilterGroupBox.Controls.Add(Me.FilterByAisleRadioButton)
-        Me.FilterGroupBox.Location = New System.Drawing.Point(30, 199)
+        Me.FilterGroupBox.Location = New System.Drawing.Point(23, 186)
         Me.FilterGroupBox.Name = "FilterGroupBox"
         Me.FilterGroupBox.Size = New System.Drawing.Size(222, 216)
         Me.FilterGroupBox.TabIndex = 2
