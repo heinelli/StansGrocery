@@ -14,16 +14,18 @@ Public Class StansGroceryForm
         Dim formattedRecord() As String
         FileOpen(1, "grocery.txt", OpenMode.Input)
         For i = 0 To 255
+            'Read each line of text file and separate line data according to comma delimiter
             record = LineInput(1)
             formattedRecord = Split(record, ",")
 
-            'If then statement used to skip over line 153 of text file which contains blank string
+            'If then statement used to skip over line 153 of text file which contains no grocery data
             'All lines of text file are inserted into global multi-dimensional array
             If Mid(formattedRecord(0).Replace("""", ""), 6) <> "" Then
                 If i < 153 Then
                     food(i, 0) = Mid(formattedRecord(0).Replace("""", ""), 6)
                     DisplayListBox.Items.Add(food(i, 0))
 
+                    'Assign an aisle number to items with missing aisle number assignment in orginal text file
                     food(i, 1) = Mid(formattedRecord(1).Replace("""", ""), 6)
                     If food(i, 1) = "" Then
                         food(i, 1) = "8"
@@ -31,6 +33,7 @@ Public Class StansGroceryForm
                         food(i, 1) = "1"
                     End If
 
+                    'Assign a category to items with missing category assignment in orginal text file
                     food(i, 2) = Mid(formattedRecord(2).Replace("""", ""), 6)
                     If food(i, 2) = "" Then
                         food(i, 2) = "Various groceries"
@@ -92,7 +95,6 @@ Public Class StansGroceryForm
                 DisplayListBox.Items.Add(food(i, 0))
             End If
         Next
-
     End Sub
 
     Private Sub DisplayListBox_Click(sender As Object, e As EventArgs) Handles DisplayListBox.Click
@@ -105,7 +107,6 @@ Public Class StansGroceryForm
         Do Until food(iteration, 0) = selectedItem
             iteration += 1
         Loop
-
         item = food(iteration, 0)
         aisle = food(iteration, 1)
         section = food(iteration, 2)
@@ -129,7 +130,6 @@ Public Class StansGroceryForm
             FilterComboBox.Items.Add(food(i, 0))
             DisplayListBox.Items.Add(food(i, 0))
         Next
-
     End Sub
 
     Private Sub FilterByCategoryRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByCategoryRadioButton.CheckedChanged
@@ -145,6 +145,7 @@ Public Class StansGroceryForm
     End Sub
 
     Private Sub FilterByAisleRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByAisleRadioButton.CheckedChanged
+        'Clear combobox and listbox. Repopulate combobox with aisle numbers from array
         FilterComboBox.Items.Clear()
         DisplayListBox.Items.Clear()
         DisplayLabel.Text = ""
@@ -164,6 +165,7 @@ Public Class StansGroceryForm
             selectedFilter = 2
         End If
 
+        'Clear listbox and repopulate listbox with all items that fall under chosen category or aisle number
         DisplayListBox.Items.Clear()
         For i = 0 To 254
             If food(i, selectedFilter) = filterIndex Then
