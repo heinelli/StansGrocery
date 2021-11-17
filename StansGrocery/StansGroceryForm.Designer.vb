@@ -128,6 +128,7 @@ Partial Class StansGroceryForm
         Me.FilterByAisleRadioButton.TabIndex = 1
         Me.FilterByAisleRadioButton.TabStop = True
         Me.FilterByAisleRadioButton.Text = "Aisle"
+        Me.ToolTip.SetToolTip(Me.FilterByAisleRadioButton, "Filter by aisle")
         Me.FilterByAisleRadioButton.UseVisualStyleBackColor = True
         '
         'FilterByCategoryRadioButton
@@ -139,6 +140,7 @@ Partial Class StansGroceryForm
         Me.FilterByCategoryRadioButton.TabIndex = 2
         Me.FilterByCategoryRadioButton.TabStop = True
         Me.FilterByCategoryRadioButton.Text = "Category"
+        Me.ToolTip.SetToolTip(Me.FilterByCategoryRadioButton, "Filter by category")
         Me.FilterByCategoryRadioButton.UseVisualStyleBackColor = True
         '
         'FilterGroupBox
@@ -162,6 +164,7 @@ Partial Class StansGroceryForm
         Me.ShowAllRadioButton.TabIndex = 0
         Me.ShowAllRadioButton.TabStop = True
         Me.ShowAllRadioButton.Text = "Show All"
+        Me.ToolTip.SetToolTip(Me.ShowAllRadioButton, "Show all items")
         Me.ShowAllRadioButton.UseVisualStyleBackColor = True
         '
         'FilterComboBox

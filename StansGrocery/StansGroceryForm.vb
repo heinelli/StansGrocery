@@ -8,6 +8,7 @@ Option Strict On
 Option Explicit On
 Option Compare Text
 Public Class StansGroceryForm
+    'Create global array to contain text file data
     Dim food(255, 4) As String
     Private Sub StansGroceryForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim record As String
