@@ -87,6 +87,7 @@ Public Class StansGroceryForm
         Dim textSearch As String = SearchTextBox.Text
         Dim searchReturn As Integer
         DisplayListBox.Items.Clear()
+        DisplayLabel.Text = ""
 
         'Search the array for any text that matches searchbox text
         'End program if zzz is typed in search textbox
@@ -100,6 +101,9 @@ Public Class StansGroceryForm
                 Me.Close()
             End If
         Next
+        If DisplayListBox.Items.Count = 0 Then
+            DisplayLabel.Text = "Sorry, no matches for " & textSearch
+        End If
     End Sub
 
     Private Sub DisplayListBox_Click(sender As Object, e As EventArgs) Handles DisplayListBox.Click
