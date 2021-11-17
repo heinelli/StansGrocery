@@ -8,6 +8,7 @@ Option Strict On
 Option Explicit On
 Option Compare Text
 Public Class StansGroceryForm
+    'Create global array to contain text file data
     Dim food(255, 4) As String
     Private Sub StansGroceryForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim record As String
@@ -87,14 +88,23 @@ Public Class StansGroceryForm
         Dim textSearch As String = SearchTextBox.Text
         Dim searchReturn As Integer
         DisplayListBox.Items.Clear()
+        DisplayLabel.Text = ""
 
         'Search the array for any text that matches searchbox text
+        'End program if zzz is typed in search textbox
         For i = 0 To 254
-            searchReturn = InStr(food(i, 0), textSearch)
-            If searchReturn <> 0 Then
-                DisplayListBox.Items.Add(food(i, 0))
+            If textSearch <> "zzz" Then
+                searchReturn = InStr(food(i, 0), textSearch)
+                If searchReturn <> 0 Then
+                    DisplayListBox.Items.Add(food(i, 0))
+                End If
+            Else
+                Me.Close()
             End If
         Next
+        If DisplayListBox.Items.Count = 0 Then
+            DisplayLabel.Text = "Sorry, no matches for " & textSearch
+        End If
     End Sub
 
     Private Sub DisplayListBox_Click(sender As Object, e As EventArgs) Handles DisplayListBox.Click
@@ -175,5 +185,9 @@ Public Class StansGroceryForm
     End Sub
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        MsgBox($"Stan's Grocery {vbNewLine}Made by Elliot Heiner {vbNewLine}RCET 0265, Fall 2021")
     End Sub
 End Class
