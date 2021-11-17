@@ -183,10 +183,6 @@ Public Class StansGroceryForm
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        MsgBox("Stan's Grocery
-
-Made by Elliot Heiner
-
-RCET 0265, Fall 2021")
+        MsgBox($"Stan's Grocery {vbNewLine}Made by Elliot Heiner {vbNewLine}RCET 0265, Fall 2021")
     End Sub
 End Class
